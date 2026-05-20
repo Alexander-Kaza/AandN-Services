@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A&N Services | Pressure Washing & Handyman</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --ink:#0f1720;
+  --muted:#6b7a8c;
+  --blue:#1a5fa8;
+  --border:#d9e2ef;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --radius:14px;
+  --serif:'DM Serif Display', serif;
+  --sans:'DM Sans', sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+}
+
+header{
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  border-bottom:1px solid var(--border);
+}
+
+.logo{
+  font-family:var(--serif);
+  font-size:22px;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.hero{
+  padding:80px 40px;
+  text-align:center;
+}
+
+.hero h1{
+  font-family:var(--serif);
+  font-size:48px;
+}
+
+.hero p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.section{
+  padding:60px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+h2{
+  font-family:var(--serif);
+  margin-bottom:20px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  margin-bottom:12px;
+  border:1px solid var(--border);
+  border-radius:8px;
+}
+
+button{
+  background:var(--blue);
+  color:white;
+  padding:12px;
+  border:none;
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:12px;
+  color:var(--muted);
+}
+.contact-preferred{
+  text-align:center;
+  margin-bottom:24px;
+  font-size:15px;
+  color:var(--muted);
+}
+.contact-preferred a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:500;
+}
+.contact-preferred a:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">A&N Services</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#book">Book</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Clean Homes, Done Right</h1>
+  <p>Pressure washing & handyman services in Brookline & surrounding areas</p>
+</section>
+
+<section id="services" class="section">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">House Washing</div>
+    <div class="card">Driveway Cleaning</div>
+    <div class="card">Deck Restoration</div>
+    <div class="card">Handyman Repairs</div>
+  </div>
+</section>
+
+<section id="book" class="section">
+  <h2>Book a Service</h2>
+
+  <div class="card">
+    <input id="b-fname" placeholder="First Name">
+    <input id="b-lname" placeholder="Last Name">
+    <input id="b-phone" placeholder="Phone">
+    <input id="b-email" placeholder="Email">
+
+    <select id="b-service">
+      <option>House Washing</option>
+      <option>Driveway Cleaning</option>
+      <option>Deck Cleaning</option>
+      <option>Handyman</option>
+    </select>
+
+    <input id="b-date" type="date">
+    <input id="b-time" placeholder="Preferred Time">
+    <textarea id="b-notes" placeholder="Notes"></textarea>
+
+    <button onclick="submitBooking()">Book Now</button>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+
+  <p class="contact-preferred">Preferred contact: <a href="mailto:Kaza_a@icloud.com">Kaza_a@icloud.com</a></p>
+
+  <div class="card">
+    <input id="c-name" placeholder="Name">
+    <input id="c-email" placeholder="Email">
+    <textarea id="c-msg" placeholder="Message"></textarea>
+
+    <button onclick="submitContact()">Send Message</button>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 A&N Services
+</footer>
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+const SUPABASE_URL = "https://naadgazrncwxtccmtzyw.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hYWRnYXpybmN3eHRjY210enl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxNDYwNjIsImV4cCI6MjA5NDcyMjA2Mn0.n6mwSIeU099xJ9h4-pKCGiq09O97k67M5qsNI7nAW0w";
+
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// BOOKING
+async function submitBooking() {
+  const booking = {
+    first_name: document.getElementById('b-fname').value,
+    last_name: document.getElementById('b-lname').value,
+    phone: document.getElementById('b-phone').value,
+    email: document.getElementById('b-email').value,
+    service: document.getElementById('b-service').value,
+    date: document.getElementById('b-date').value,
+    time: document.getElementById('b-time').value,
+    notes: document.getElementById('b-notes').value
+  };
+
+  const { error } = await db.from('bookings').insert([booking]);
+
+  if (!error) {
+    alert("Booking received!");
+  } else {
+    alert("Error sending booking");
+  }
+}
+
+// CONTACT
+async function submitContact() {
+  const msg = {
+    name: document.getElementById('c-name').value,
+    email: document.getElementById('c-email').value,
+    message: document.getElementById('c-msg').value
+  };
+
+  const { error } = await db.from('messages').insert([msg]);
+
+  if (!error) {
+    alert("Message sent!");
+  } else {
+    alert("Error sending message");
+  }
+}
+</script>
+
+</body>
+</html>
