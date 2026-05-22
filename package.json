@@ -1,0 +1,16 @@
+{
+  "name": "aandn-services",
+  "version": "1.0.0",
+  "description": "A&N Services landing page with booking backend, Stripe payments, and email notifications.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.3",
+    "nodemailer": "^6.9.4",
+    "stripe": "^12.15.0"
+  }
+}

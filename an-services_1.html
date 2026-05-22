@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&N Services — Pressure Washing & Handyman | Brookline, MA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#040d1a;--navy2:#071428;--blue:#1456d4;--blue2:#2068f0;--blue3:#4b8ef7;--sky:#7ab8ff;
+  --ice:#d4e8ff;--white:#f8fbff;--muted:#6b8ab0;
+  --border:rgba(100,160,255,.15);--border2:rgba(100,160,255,.08);
+  --glass:rgba(255,255,255,.04);--glass2:rgba(255,255,255,.07);
+  --green:#22c55e;--green2:rgba(34,197,94,.15);
+  --serif:'Playfair Display',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--navy);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--navy2)}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 10% 10%,rgba(20,86,212,.18) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 80%,rgba(32,104,240,.12) 0%,transparent 60%)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 clamp(1.5rem,4vw,3.5rem);height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);backdrop-filter:blur(24px);background:rgba(4,13,26,.8)}
+.nav-logo{font-family:var(--serif);font-size:1.5rem;color:var(--white);text-decoration:none;font-weight:700}
+.nav-logo em{font-style:normal;color:var(--blue3)}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.875rem;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--blue2))!important;color:#fff!important;padding:.5rem 1.3rem;border-radius:8px;font-weight:500!important;box-shadow:0 0 20px rgba(20,86,212,.4)}
+.nav-cta:hover{box-shadow:0 0 32px rgba(20,86,212,.65)!important}
+/* HERO */
+#hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:100px clamp(1.5rem,5vw,4rem) 60px;overflow:hidden}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:1.75rem}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--blue3)}
+h1.display{font-family:var(--serif);font-size:clamp(3rem,5.5vw,5rem);line-height:1.05;letter-spacing:-.025em;font-weight:900;margin-bottom:1.5rem}
+h1.display em{font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--blue3),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.05rem;color:rgba(212,232,255,.7);font-weight:300;max-width:440px;line-height:1.75;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem;font-weight:500;text-decoration:none;border-radius:10px;transition:all .2s;letter-spacing:.01em}
+.btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:.85rem 1.9rem;box-shadow:0 4px 24px rgba(20,86,212,.45)}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(20,86,212,.6)}
+.btn-ghost{background:var(--glass2);color:var(--ice);padding:.85rem 1.6rem;border:1px solid var(--border)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-trust{margin-top:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted)}
+.trust-dot{width:6px;height:6px;border-radius:50%;background:var(--blue3)}
+.hero-cards{display:flex;flex-direction:column;gap:1rem;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hc{background:var(--glass);border:1px solid var(--border);border-radius:18px;padding:1.5rem;backdrop-filter:blur(10px);position:relative;overflow:hidden;transition:all .3s}
+.hc:hover{transform:translateY(-3px);border-color:rgba(100,160,255,.3)}
+.hc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(100,160,255,.4),transparent)}
+.hc.featured{background:linear-gradient(135deg,rgba(20,86,212,.25),rgba(32,104,240,.15));border-color:rgba(100,160,255,.3)}
+.hc-icon{font-size:1.6rem;margin-bottom:.75rem}
+.hc h3{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--white);margin-bottom:.3rem}
+.hc p{font-size:.82rem;color:var(--muted);font-weight:300}
+.hc-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.hc-row .hc{text-align:center}
+.big-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--blue3);line-height:1;margin-bottom:.25rem}
+.big-lbl{font-size:.75rem;color:var(--muted)}
+/* SECTIONS */
+.section{position:relative;z-index:1;padding:clamp(5rem,9vw,8rem) clamp(1.5rem,5vw,4rem)}
+.container{max-width:1100px;margin:0 auto}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:.875rem;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--blue3)}
+.s-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);line-height:1.1;letter-spacing:-.025em;font-weight:700;margin-bottom:1rem;color:var(--white)}
+.s-sub{font-size:1rem;color:rgba(212,232,255,.6);font-weight:300;max-width:520px;line-height:1.75;margin-bottom:3.5rem}
+.div-line{position:relative;z-index:1;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+/* SERVICES */
+#services{background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc-card{background:var(--glass);border:1px solid var(--border2);border-radius:16px;padding:2rem 1.75rem;transition:all .3s;position:relative;overflow:hidden}
+.svc-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 30px rgba(20,86,212,.2)}
+.svc-icon-wrap{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(20,86,212,.3),rgba(32,104,240,.15));border:1px solid rgba(100,160,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.5rem}
+.svc-card h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--white);margin-bottom:.6rem}
+.svc-card p{font-size:.85rem;color:var(--muted);line-height:1.65;font-weight:300;margin-bottom:1.25rem}
+.svc-price{font-size:.78rem;font-weight:600;color:var(--blue3);letter-spacing:.05em;text-transform:uppercase}
+.svc-price::before{content:'-- '}
+/* PROCESS */
+#process{background:var(--navy)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative}
+.process-grid::before{content:'';position:absolute;top:38px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--border),var(--border),var(--border),transparent)}
+.proc-step{text-align:center;padding:2rem 1rem}
+.proc-num{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue2));display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#fff;margin:0 auto 1.5rem;box-shadow:0 0 24px rgba(20,86,212,.5);position:relative;z-index:2}
+.proc-step h4{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--white);margin-bottom:.5rem}
+.proc-step p{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.6}
+/* REVIEWS */
+#reviews{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.rev-card{background:var(--glass);border:1px solid var(--border2);border-radius:16px;padding:2rem;transition:all .3s}
+.rev-card:hover{border-color:var(--border);transform:translateY(-3px)}
+.rev-stars{color:#f4c430;letter-spacing:3px;font-size:.8rem;margin-bottom:1.25rem}
+.rev-card blockquote{font-size:.9rem;color:rgba(212,232,255,.75);font-weight:300;line-height:1.75;margin-bottom:1.5rem;font-style:italic}
+.rev-author{font-size:.78rem;color:var(--muted);font-weight:500;letter-spacing:.03em}
+.rev-author::before{content:'-- '}
+/* BOOKING */
+#booking{background:var(--navy2)}
+.book-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start}
+.book-info h2{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--white);margin-bottom:.875rem}
+.book-info>p{font-size:.9rem;color:rgba(212,232,255,.6);font-weight:300;line-height:1.75;margin-bottom:2rem}
+.steps-list{display:flex;flex-direction:column;gap:1.5rem}
+.step-item{display:flex;gap:1.25rem;align-items:flex-start}
+.step-n{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;font-size:.8rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 16px rgba(20,86,212,.4)}
+.step-n+div h5{font-size:.9rem;font-weight:500;color:var(--white);margin-bottom:.2rem}
+.step-n+div p{font-size:.8rem;color:var(--muted);font-weight:300}
+/* FORM PANEL */
+.form-panel{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:2.25rem;backdrop-filter:blur(12px)}
+.form-panel::before{content:'';display:block;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue3),var(--sky));border-radius:2px;margin-bottom:2rem}
+.form-panel h3{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--white);margin-bottom:1.75rem}
+.fg{margin-bottom:1.1rem}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;font-size:.72rem;font-weight:600;color:var(--muted);margin-bottom:.4rem;letter-spacing:.08em;text-transform:uppercase}
+input,select,textarea{width:100%;padding:.8rem 1rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;font-family:var(--sans);font-size:.875rem;color:var(--white);outline:none;transition:all .2s;-webkit-appearance:none;appearance:none}
+input:focus,select:focus,textarea:focus{border-color:rgba(100,160,255,.5);background:rgba(255,255,255,.08);box-shadow:0 0 0 3px rgba(20,86,212,.15)}
+input::placeholder,textarea::placeholder{color:rgba(107,138,176,.6)}
+select option{background:var(--navy2);color:var(--white)}
+textarea{resize:none;height:75px}
+.form-btn{margin-top:1.25rem}
+/* PAYMENT */
+.payment-section{margin-top:1.5rem;border-top:1px solid var(--border2);padding-top:1.5rem}
+.payment-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.payment-label-row span{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.payment-methods{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.25rem}
+.pay-btn{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.65rem .5rem;cursor:pointer;transition:all .2s;text-align:center;font-family:var(--sans)}
+.pay-btn:hover{border-color:rgba(100,160,255,.4);background:rgba(100,160,255,.08)}
+.pay-btn.active{border-color:var(--blue3);background:rgba(20,86,212,.2);box-shadow:0 0 12px rgba(20,86,212,.3)}
+.pay-icon{font-size:1.3rem;display:block;margin-bottom:.25rem}
+.pay-name{font-size:.68rem;font-weight:500;color:var(--muted);letter-spacing:.03em}
+.pay-btn.active .pay-name{color:var(--blue3)}
+/* CARD FIELDS */
+.card-fields{display:none}
+.card-fields.show{display:block}
+.card-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem}
+.card-input-wrap{position:relative}
+.card-input-wrap input{padding-right:2.5rem}
+.card-badge{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);font-size:.9rem}
+/* VENMO FIELDS */
+.venmo-fields{display:none}
+.venmo-fields.show{display:block}
+.venmo-info-box{background:linear-gradient(135deg,rgba(0,136,204,.15),rgba(0,136,204,.08));border:1px solid rgba(0,136,204,.3);border-radius:12px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:1rem}
+.venmo-logo{font-size:2rem;flex-shrink:0}
+.venmo-info-box h4{font-size:.9rem;font-weight:500;color:var(--white);margin-bottom:.2rem}
+.venmo-info-box p{font-size:.8rem;color:var(--muted);font-weight:300}
+.venmo-handle{font-size:.95rem;font-weight:600;color:#008bcc;letter-spacing:.02em}
+/* ZELLE FIELDS */
+.zelle-fields{display:none}
+.zelle-fields.show{display:block}
+.zelle-info-box{background:linear-gradient(135deg,rgba(109,40,217,.15),rgba(109,40,217,.08));border:1px solid rgba(109,40,217,.3);border-radius:12px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:1rem}
+.zelle-logo{font-size:2rem;flex-shrink:0}
+.zelle-info-box h4{font-size:.9rem;font-weight:500;color:var(--white);margin-bottom:.2rem}
+.zelle-info-box p{font-size:.8rem;color:var(--muted);font-weight:300}
+/* CASH FIELDS */
+.cash-fields{display:none}
+.cash-fields.show{display:block}
+.cash-info-box{background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.06));border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:1rem}
+.cash-logo{font-size:2rem;flex-shrink:0}
+.cash-info-box h4{font-size:.9rem;font-weight:500;color:var(--white);margin-bottom:.2rem}
+.cash-info-box p{font-size:.8rem;color:var(--muted);font-weight:300}
+.deposit-note{margin-top:.875rem;font-size:.78rem;color:var(--muted);text-align:center;font-style:italic}
+/* AI STATUS */
+.ai-status{font-size:.75rem;color:var(--muted);margin-top:.875rem;text-align:center;min-height:16px;letter-spacing:.02em}
+.ai-typing::after{content:'|';animation:blink .6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.confirm-panel{display:none;text-align:center;padding:2.5rem 1rem}
+.conf-icon{font-size:3rem;margin-bottom:1rem;display:block}
+.confirm-panel h3{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--white);margin-bottom:.75rem}
+.confirm-panel p{font-size:.9rem;color:rgba(212,232,255,.65);font-weight:300;line-height:1.75}
+.ref-tag{display:inline-block;margin-top:1rem;padding:.4rem 1rem;border-radius:20px;background:rgba(20,86,212,.25);border:1px solid rgba(100,160,255,.3);font-size:.78rem;font-weight:600;color:var(--blue3);letter-spacing:.1em}
+/* CONTACT */
+#contact{background:var(--navy)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-info h2{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--white);margin-bottom:.875rem}
+.contact-info>p{font-size:.9rem;color:rgba(212,232,255,.6);font-weight:300;line-height:1.75;margin-bottom:2.25rem}
+.c-items{display:flex;flex-direction:column;gap:1.5rem}
+.c-item{display:flex;gap:1.25rem;align-items:flex-start}
+.c-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(20,86,212,.3),rgba(32,104,240,.15));border:1px solid rgba(100,160,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.c-item h5{font-size:.85rem;font-weight:600;color:var(--white);margin-bottom:.25rem;letter-spacing:.02em}
+.c-item p,.c-item a{font-size:.85rem;color:var(--muted);font-weight:300;text-decoration:none;transition:color .2s}
+.c-item a:hover{color:var(--sky)}
+/* FOOTER */
+footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid var(--border);padding:2.25rem clamp(1.5rem,4vw,3.5rem)}
+.foot{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:var(--serif);font-size:1.25rem;color:var(--white);text-decoration:none;font-weight:700}
+.foot-logo em{font-style:normal;color:var(--blue3)}
+.foot-links{display:flex;gap:2rem;list-style:none}
+.foot-links a{text-decoration:none;font-size:.8rem;color:var(--muted);transition:color .2s}
+.foot-links a:hover{color:var(--white)}
+.foot-copy{font-size:.75rem;color:rgba(107,138,176,.4)}
+.admin-trigger{font-size:.72rem;color:rgba(107,138,176,.2);background:none;border:none;font-family:var(--sans);cursor:pointer;transition:color .2s}
+.admin-trigger:hover{color:var(--muted)}
+/* ADMIN OVERLAY */
+.overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(4,13,26,.88);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem}
+.overlay.open{display:flex}
+.admin-modal{background:var(--navy2);border:1px solid var(--border);border-radius:22px;width:100%;max-width:960px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 40px 120px rgba(0,0,0,.7)}
+.admin-hdr{padding:1.4rem 1.75rem;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(20,86,212,.3),rgba(32,104,240,.15));display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.admin-hdr h2{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--white)}
+.admin-hdr h2 span{color:var(--blue3)}
+.x-btn{background:rgba(255,255,255,.08);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.x-btn:hover{background:rgba(255,255,255,.14);color:var(--white)}
+.admin-body{padding:1.75rem;overflow-y:auto;flex:1}
+/* ADMIN TABS */
+.admin-tabs{display:flex;gap:.5rem;margin-bottom:1.75rem;border-bottom:1px solid var(--border2);padding-bottom:1rem}
+.atab{background:none;border:1px solid var(--border2);border-radius:8px;padding:.45rem 1rem;font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s}
+.atab.active{background:rgba(20,86,212,.2);border-color:rgba(100,160,255,.3);color:var(--blue3)}
+.atab-panel{display:none}
+.atab-panel.active{display:block}
+.a-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.75rem}
+.a-stat{background:var(--glass);border:1px solid var(--border2);border-radius:12px;padding:1.1rem;text-align:center}
+.a-stat-n{font-family:var(--serif);font-size:1.75rem;color:var(--blue3);line-height:1;margin-bottom:.3rem;font-weight:700}
+.a-stat-l{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+.ai-badge{display:flex;align-items:center;gap:.75rem;background:linear-gradient(135deg,rgba(20,86,212,.15),rgba(32,104,240,.08));border:1px solid rgba(100,160,255,.2);border-radius:12px;padding:.875rem 1.1rem;font-size:.8rem;color:rgba(212,232,255,.8);margin-bottom:1.5rem;line-height:1.5}
+.tbl-head{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--white);margin:.25rem 0 1rem}
+.data-tbl{width:100%;border-collapse:collapse;font-size:.8rem}
+.data-tbl th{text-align:left;padding:.6rem .875rem;font-size:.68rem;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border2);background:rgba(255,255,255,.02)}
+.data-tbl td{padding:.75rem .875rem;border-bottom:1px solid var(--border2);color:rgba(212,232,255,.7);vertical-align:middle}
+.data-tbl tr:last-child td{border-bottom:none}
+.data-tbl tr:hover td{background:rgba(255,255,255,.02)}
+.sbadge{display:inline-flex;align-items:center;padding:.25rem .65rem;border-radius:20px;font-size:.68rem;font-weight:600;letter-spacing:.04em}
+.s-new{background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+.s-confirmed{background:rgba(20,86,212,.2);color:var(--blue3);border:1px solid rgba(100,160,255,.2)}
+.s-done{background:rgba(255,255,255,.07);color:var(--muted);border:1px solid var(--border2)}
+.t-empty{text-align:center;padding:2.5rem;color:var(--muted);font-size:.85rem}
+.pw-wrap{padding:2rem;text-align:center}
+.pw-wrap h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:1.25rem}
+.pw-wrap input{max-width:280px;margin:0 auto .875rem;display:block}
+.pw-hint{font-size:.72rem;color:rgba(107,138,176,.4);margin-top:.875rem}
+.upd-btn{font-size:.7rem;background:rgba(20,86,212,.2);border:1px solid rgba(100,160,255,.2);color:var(--blue3);border-radius:6px;padding:.25rem .6rem;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.upd-btn:hover{background:rgba(20,86,212,.35)}
+.sec-lbl{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--white);margin:1.5rem 0 1rem}
+/* SETTINGS TAB */
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.settings-card{background:var(--glass);border:1px solid var(--border2);border-radius:14px;padding:1.5rem}
+.settings-card h4{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--white);margin-bottom:1.1rem}
+.settings-card .fg{margin-bottom:.875rem}
+.settings-card label{color:var(--muted)}
+.settings-card input{background:rgba(255,255,255,.06)}
+.save-btn{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border:none;padding:.65rem 1.4rem;border-radius:8px;font-family:var(--sans);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;margin-top:.5rem}
+.save-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(20,86,212,.4)}
+.save-success{font-size:.75rem;color:var(--green);margin-top:.5rem;min-height:18px}
+/* PAY METHOD BADGE */
+.pay-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.2rem .55rem;border-radius:6px;font-size:.68rem;font-weight:600}
+.pay-card{background:rgba(20,86,212,.2);color:var(--blue3);border:1px solid rgba(100,160,255,.2)}
+.pay-venmo{background:rgba(0,136,204,.2);color:#29b6f6;border:1px solid rgba(0,136,204,.25)}
+.pay-zelle{background:rgba(109,40,217,.2);color:#c084fc;border:1px solid rgba(109,40,217,.25)}
+.pay-cash{background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .7s ease forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}.d5{animation-delay:.65s}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner,.book-wrap,.contact-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .hero-cards{display:none}
+  .svc-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid::before{display:none}
+  .a-stats{grid-template-columns:repeat(2,1fr)}
+  .settings-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .svc-grid,.rev-grid{grid-template-columns:1fr}
+  .fr2{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .payment-methods{grid-template-columns:repeat(2,1fr)}
+  .card-row{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo" id="site-logo">A<em>&</em>N Services</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#booking" class="nav-cta">Book Online</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p id="hero-area" class="hero-eyebrow fade-up d1">Brookline, MA &amp; Surrounding Areas</p>
+      <h1 class="display fade-up d2">Where homes get <em>cleaned right.</em></h1>
+      <p id="hero-desc-text" class="hero-desc fade-up d3">Professional pressure washing and handyman services trusted by hundreds of homeowners across Greater Boston. Quality work, fair prices, guaranteed.</p>
+      <div class="hero-btns fade-up d4">
+        <a href="#booking" class="btn btn-blue">Book Your Service &#x2197;</a>
+        <a href="tel:+16175550000" class="btn btn-ghost biz-phone">&#128222; (617) 555-0000</a>
+      </div>
+      <div class="hero-trust fade-up d5">
+        <span class="trust-item"><span class="trust-dot"></span>Licensed &amp; Insured</span>
+        <span class="trust-item"><span class="trust-dot"></span>500+ Jobs Completed</span>
+        <span class="trust-item"><span class="trust-dot"></span>5-Star Rated</span>
+        <span class="trust-item"><span class="trust-dot"></span>All Payments Accepted</span>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hc featured">
+        <div class="hc-icon">&#128167;</div>
+        <h3>Pressure Washing</h3>
+        <p>Driveways, siding, decks &amp; patios restored to like-new condition</p>
+      </div>
+      <div class="hc-row">
+        <div class="hc"><div class="big-num">500+</div><div class="big-lbl">Jobs Completed</div></div>
+        <div class="hc"><div class="big-num">5&#9733;</div><div class="big-lbl">Average Rating</div></div>
+      </div>
+      <div class="hc">
+        <div class="hc-icon">&#128295;</div>
+        <h3>Handyman Services</h3>
+        <p>Repairs, installs &amp; odd jobs handled professionally and quickly</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <p class="eyebrow">What We Do</p>
+    <h2 class="s-title">Every job, done right.</h2>
+    <p class="s-sub">From one-time deep cleans to ongoing maintenance, A&amp;N handles it all with professionalism, care, and guaranteed satisfaction.</p>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon-wrap">&#127968;</div><h3>House &amp; Siding Washing</h3><p>Safely strip away mildew, dirt, and grime from any exterior. Soft-wash where needed, pressure where it counts.</p><div class="svc-price">Starting at $150</div></div>
+      <div class="svc-card"><div class="svc-icon-wrap">&#128663;</div><h3>Driveway &amp; Concrete</h3><p>Blast away oil stains, moss, and years of buildup. Driveways, patios, and walkways all restored.</p><div class="svc-price">Starting at $80</div></div>
+      <div class="svc-card"><div class="svc-icon-wrap">&#129683;</div><h3>Deck &amp; Fence Washing</h3><p>Bring outdoor wood and vinyl back to life. Perfect prep for staining or a fresh clean look.</p><div class="svc-price">Starting at $100</div></div>
+      <div class="svc-card"><div class="svc-icon-wrap">&#128296;</div><h3>General Handyman</h3><p>Assembly, door repairs, caulking, patching &mdash; the jobs that pile up, handled fast and professionally.</p><div class="svc-price">$65 / hour</div></div>
+      <div class="svc-card"><div class="svc-icon-wrap">&#129695;</div><h3>Window &amp; Gutter Cleaning</h3><p>Streak-free windows inside and out. Complete gutter clearing to protect your home.</p><div class="svc-price">Starting at $90</div></div>
+      <div class="svc-card"><div class="svc-icon-wrap">&#127959;</div><h3>Repairs &amp; Installs</h3><p>Fixtures, fans, shelving, TV mounts, towel bars, and more. We handle what's on your list.</p><div class="svc-price">$65 / hour</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <p class="eyebrow">How It Works</p>
+    <h2 class="s-title">Simple from start to finish.</h2>
+    <p class="s-sub">Booking with A&amp;N is fast, transparent, and completely hassle-free.</p>
+    <div class="process-grid">
+      <div class="proc-step"><div class="proc-num">1</div><h4>Book Online</h4><p>Fill out our quick form with your service, date, and details. No phone tag.</p></div>
+      <div class="proc-step"><div class="proc-num">2</div><h4>Pay Securely</h4><p>Choose your payment method &mdash; card, Venmo, Zelle, or cash on arrival.</p></div>
+      <div class="proc-step"><div class="proc-num">3</div><h4>We Show Up</h4><p>Our team arrives on schedule, fully equipped and ready to work.</p></div>
+      <div class="proc-step"><div class="proc-num">4</div><h4>You're Satisfied</h4><p>We don't leave until you're happy. Quality guaranteed every time.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <p class="eyebrow">Customer Reviews</p>
+    <h2 class="s-title">Real results, real people.</h2>
+    <p class="s-sub">Hundreds of homeowners across Greater Boston trust A&amp;N Services.</p>
+    <div class="rev-grid">
+      <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"My driveway looks brand new. Hadn't been cleaned in years and they made it look like it was just poured. Will hire again without question."</blockquote><div class="rev-author">Mike T., Brookline</div></div>
+      <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"Super responsive and professional. Fixed three things in one afternoon that had been on my list for months. Very fair pricing, easy to pay with Venmo."</blockquote><div class="rev-author">Carla M., Newton</div></div>
+      <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"Great experience start to finish. The siding looks incredible and they were careful around my landscaping. Booked and paid online in minutes."</blockquote><div class="rev-author">James R., Chestnut Hill</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- BOOKING -->
+<section class="section" id="booking">
+  <div class="container">
+    <p class="eyebrow">Online Booking</p>
+    <h2 class="s-title">Book &amp; pay in minutes.</h2>
+    <div class="book-wrap">
+      <div class="book-info">
+        <h2>Fast, easy scheduling.</h2>
+        <p>Submit your request, choose your payment method, and get an AI-generated confirmation instantly. We follow up within a few hours.</p>
+        <div class="steps-list">
+          <div class="step-item"><div class="step-n">1</div><div><h5>Choose your service &amp; date</h5><p>Select what you need, when you need it.</p></div></div>
+          <div class="step-item"><div class="step-n">2</div><div><h5>Pay your way</h5><p>Credit card, Venmo, Zelle, or cash on arrival &mdash; your choice.</p></div></div>
+          <div class="step-item"><div class="step-n">3</div><div><h5>Get instant AI confirmation</h5><p>Claude AI writes a personalized confirmation with your reference number.</p></div></div>
+          <div class="step-item"><div class="step-n">4</div><div><h5>We show up &amp; get it done</h5><p>Tracked in our dashboard from booking to completion.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="form-panel">
+          <h3>Request an Appointment</h3>
+          <div id="book-form">
+            <div class="fr2">
+              <div class="fg"><label>First Name</label><input type="text" id="b-fname" placeholder="John"></div>
+              <div class="fg"><label>Last Name</label><input type="text" id="b-lname" placeholder="Smith"></div>
+            </div>
+            <div class="fr2">
+              <div class="fg"><label>Phone</label><input type="tel" id="b-phone" placeholder="(617) 555-0000"></div>
+              <div class="fg"><label>Email</label><input type="email" id="b-email" placeholder="john@email.com"></div>
+            </div>
+            <div class="fg">
+              <label>Service Needed</label>
+              <select id="b-service">
+                <option value="">Select a service...</option>
+                <option>House &amp; Siding Washing</option>
+                <option>Driveway &amp; Concrete Cleaning</option>
+                <option>Deck &amp; Fence Washing</option>
+                <option>General Handyman</option>
+                <option>Window &amp; Gutter Cleaning</option>
+                <option>Minor Repairs &amp; Installs</option>
+                <option>Multiple Services / Custom Quote</option>
+              </select>
+            </div>
+            <div class="fr2">
+              <div class="fg"><label>Preferred Date</label><input type="date" id="b-date"></div>
+              <div class="fg"><label>Preferred Time</label>
+                <select id="b-time">
+                  <option value="">Flexible</option>
+                  <option>Morning (8am - 12pm)</option>
+                  <option>Afternoon (12pm - 5pm)</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Address &amp; Job Details</label><textarea id="b-notes" placeholder="Your address and any details that will help us prepare..."></textarea></div>
+
+            <!-- PAYMENT -->
+            <div class="payment-section">
+              <div class="payment-label-row">
+                <span>Payment Method</span>
+                <span style="font-size:.7rem;color:rgba(107,138,176,.5)">Secure &amp; Trusted</span>
+              </div>
+              <div class="payment-methods">
+                <button type="button" class="pay-btn active" onclick="selectPay('card',this)">
+                  <span class="pay-icon">&#128179;</span>
+                  <span class="pay-name">Credit Card</span>
+                </button>
+                <button type="button" class="pay-btn" onclick="selectPay('venmo',this)">
+                  <span class="pay-icon">&#128184;</span>
+                  <span class="pay-name">Venmo</span>
+                </button>
+                <button type="button" class="pay-btn" onclick="selectPay('zelle',this)">
+                  <span class="pay-icon">&#9889;</span>
+                  <span class="pay-name">Zelle</span>
+                </button>
+                <button type="button" class="pay-btn" onclick="selectPay('cash',this)">
+                  <span class="pay-icon">&#128181;</span>
+                  <span class="pay-name">Cash</span>
+                </button>
+              </div>
+
+              <!-- CARD FIELDS -->
+              <div class="card-fields show" id="pay-card">
+                <div class="fg"><label>Cardholder Name</label><input type="text" id="cc-name" placeholder="John Smith"></div>
+                <div class="fg">
+                  <label>Card Number</label>
+                  <div class="card-input-wrap">
+                    <input type="text" id="cc-num" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)">
+                    <span class="card-badge" id="card-badge">&#128179;</span>
+                  </div>
+                </div>
+                <div class="card-row">
+                  <div class="fg"><label>MM / YY</label><input type="text" id="cc-exp" placeholder="MM / YY" maxlength="7" oninput="formatExp(this)"></div>
+                  <div class="fg"><label>CVV</label><input type="password" id="cc-cvv" placeholder="***" maxlength="4"></div>
+                  <div class="fg"><label>ZIP Code</label><input type="text" id="cc-zip" placeholder="02446" maxlength="5"></div>
+                </div>
+                <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;display:flex;align-items:center;gap:.4rem">&#128274; Payments are processed securely. Card details are never stored.</p>
+              </div>
+
+              <!-- VENMO FIELDS -->
+              <div class="venmo-fields" id="pay-venmo">
+                <div class="venmo-info-box">
+                  <span class="venmo-logo">&#128184;</span>
+                  <div>
+                    <h4>Send via Venmo</h4>
+                    <p>After booking, send your deposit to:</p>
+                    <p class="venmo-handle" id="venmo-display">@ANServices-MA</p>
+                  </div>
+                </div>
+                <div class="fg" style="margin-top:.875rem"><label>Your Venmo Username</label><input type="text" id="venmo-user" placeholder="@yourname"></div>
+                <p class="deposit-note">A 25% deposit is collected to confirm your booking. Remainder due on day of service.</p>
+              </div>
+
+              <!-- ZELLE FIELDS -->
+              <div class="zelle-fields" id="pay-zelle">
+                <div class="zelle-info-box">
+                  <span class="zelle-logo">&#9889;</span>
+                  <div>
+                    <h4>Send via Zelle</h4>
+                    <p>After booking, send your deposit to:</p>
+                    <p style="font-size:.95rem;font-weight:600;color:#c084fc;letter-spacing:.02em" id="zelle-display">kaza_a@icloud.com</p>
+                  </div>
+                </div>
+                <p class="deposit-note">A 25% deposit is collected to confirm your booking. Remainder due on day of service.</p>
+              </div>
+
+              <!-- CASH FIELDS -->
+              <div class="cash-fields" id="pay-cash">
+                <div class="cash-info-box">
+                  <span class="cash-logo">&#128181;</span>
+                  <div>
+                    <h4>Pay Cash on Arrival</h4>
+                    <p>No deposit needed. Full payment collected when the job is complete. Please have exact amount ready.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-btn">
+              <button class="btn btn-blue" onclick="submitBooking()" id="book-btn" style="width:100%;justify-content:center">Confirm &amp; Book &#x2197;</button>
+            </div>
+            <p class="ai-status" id="book-status"></p>
+          </div>
+          <div class="confirm-panel" id="book-confirm">
+            <span class="conf-icon">&#9989;</span>
+            <h3>You're booked!</h3>
+            <p id="conf-msg">We'll confirm your appointment and be in touch within a few hours.</p>
+            <div class="ref-tag" id="conf-ref">REF #AN-0000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="eyebrow">Get In Touch</p>
+    <h2 class="s-title">We'd love to hear from you.</h2>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h2>Reach out anytime.</h2>
+        <p>Have a question, need a quote, or want to talk through a project? We respond fast.</p>
+        <div class="c-items">
+          <div class="c-item"><div class="c-icon">&#128222;</div><div><h5>Phone</h5><p><a class="biz-phone" href="tel:+16175550000">(617) 555-0000</a></p></div></div>
+          <div class="c-item"><div class="c-icon">&#9993;</div><div><h5>Email</h5><p><a class="biz-email" href="mailto:kaza_a@icloud.com">kaza_a@icloud.com</a></p></div></div>
+          <div class="c-item"><div class="c-icon">&#128205;</div><div><h5>Service Area</h5><p class="biz-area">Brookline &middot; Newton &middot; Chestnut Hill &middot; Jamaica Plain &amp; Watertown &amp; surrounding towns</p></div></div>
+          <div class="c-item"><div class="c-icon">&#128336;</div><div><h5>Hours</h5><p>Mon&ndash;Sat: 7am&ndash;6pm &nbsp;&middot;&nbsp; Sun: By Appointment</p></div></div>
+          <div class="c-item"><div class="c-icon">&#128179;</div><div><h5>We Accept</h5><p>Credit Card &nbsp;&middot;&nbsp; Venmo &nbsp;&middot;&nbsp; Zelle &nbsp;&middot;&nbsp; Cash</p></div></div>
+        </div>
+      </div>
+      <div class="form-panel">
+        <h3>Send a Message</h3>
+        <div id="contact-form">
+          <div class="fg"><label>Your Name</label><input type="text" id="c-name" placeholder="Full name"></div>
+          <div class="fg"><label>Email</label><input type="email" id="c-email" placeholder="your@email.com"></div>
+          <div class="fg"><label>Message</label><textarea id="c-msg" style="height:120px" placeholder="How can we help?"></textarea></div>
+          <div class="form-btn">
+            <button class="btn btn-blue" onclick="submitContact()" id="c-btn" style="width:100%;justify-content:center">Send Message &#x2197;</button>
+          </div>
+          <p class="ai-status" id="c-status"></p>
+        </div>
+        <div class="confirm-panel" id="c-confirm">
+          <span class="conf-icon">&#128233;</span>
+          <h3>Message sent!</h3>
+          <p id="contact-confirm-msg">Thanks for reaching out. We'll reply to kaza_a@icloud.com shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <a href="#" class="foot-logo">A<em>&</em>N Services</a>
+    <ul class="foot-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#booking">Book Online</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="foot-copy">&copy; 2025 A&amp;N Services &middot; Brookline, MA</span>
+    <button class="admin-trigger" onclick="openAdmin()">Admin &#9881;</button>
+  </div>
+</footer>
+
+<!-- ADMIN -->
+<div class="overlay" id="admin-overlay">
+  <div class="admin-modal">
+    <div class="admin-hdr">
+      <h2>&#9881; A&amp;N Services <span>Admin Dashboard</span></h2>
+      <button class="x-btn" onclick="closeAdmin()">&#x2715;</button>
+    </div>
+    <div class="admin-body">
+      <div id="admin-login">
+        <div class="pw-wrap">
+          <h3>Admin Login</h3>
+          <input type="password" id="admin-pw" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPw()">
+          <button class="btn btn-blue" onclick="checkPw()" style="margin:.5rem auto 0;display:flex">Login &rarr;</button>
+          <p class="pw-hint">Default password: admin123</p>
+        </div>
+      </div>
+      <div id="admin-dash" style="display:none">
+        <div class="admin-tabs">
+          <button class="atab active" onclick="switchTab('overview',this)">Overview</button>
+          <button class="atab" onclick="switchTab('bookings',this)">Bookings</button>
+          <button class="atab" onclick="switchTab('messages',this)">Messages</button>
+          <button class="atab" onclick="switchTab('settings',this)">Settings</button>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="atab-panel active" id="tab-overview">
+          <div class="ai-badge">
+            <span style="font-size:1.3rem;flex-shrink:0">&#129302;</span>
+            <span><strong>Instant Confirmations:</strong> Every booking confirmation is generated locally in your browser and saved instantly in the dashboard.</span>
+          </div>
+          <div class="a-stats">
+            <div class="a-stat"><div class="a-stat-n" id="s-total">0</div><div class="a-stat-l">Total Bookings</div></div>
+            <div class="a-stat"><div class="a-stat-n" id="s-new">0</div><div class="a-stat-l">New Requests</div></div>
+            <div class="a-stat"><div class="a-stat-n" id="s-msgs">0</div><div class="a-stat-l">Messages</div></div>
+            <div class="a-stat"><div class="a-stat-n" id="s-rev">$0</div><div class="a-stat-l">Est. Revenue</div></div>
+          </div>
+          <p class="tbl-head">Recent Bookings</p>
+          <div id="book-tbl-overview"></div>
+        </div>
+
+        <!-- BOOKINGS -->
+        <div class="atab-panel" id="tab-bookings">
+          <p class="tbl-head">All Bookings</p>
+          <div id="book-tbl-full"></div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="atab-panel" id="tab-messages">
+          <p class="tbl-head">Contact Messages</p>
+          <div id="msg-tbl"></div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="atab-panel" id="tab-settings">
+          <div class="settings-grid">
+            <div class="settings-card">
+              <h4>&#128274; Change Admin Password</h4>
+              <div class="fg"><label>Current Password</label><input type="password" id="pw-current" placeholder="Current password"></div>
+              <div class="fg"><label>New Password</label><input type="password" id="pw-new" placeholder="New password (min 6 chars)"></div>
+              <div class="fg"><label>Confirm New Password</label><input type="password" id="pw-confirm" placeholder="Confirm new password"></div>
+              <button class="save-btn" onclick="changePassword()">Update Password</button>
+              <p class="save-success" id="pw-msg"></p>
+            </div>
+            <div class="settings-card">
+              <h4>&#128184; Payment Info</h4>
+              <div class="fg"><label>Venmo Handle</label><input type="text" id="set-venmo" placeholder="@ANServices-MA"></div>
+              <div class="fg"><label>Zelle Email / Phone</label><input type="text" id="set-zelle" placeholder="kaza_a@icloud.com"></div>
+              <button class="save-btn" onclick="savePaymentInfo()">Save Payment Info</button>
+              <p class="save-success" id="pay-msg"></p>
+            </div>
+            <div class="settings-card">
+              <h4>&#9993; Business Info</h4>
+              <div class="fg"><label>Business Name</label><input type="text" id="set-name" placeholder="A&N Services"></div>
+              <div class="fg"><label>Hero Tagline</label><input type="text" id="set-tagline" placeholder="Pressure washing & handyman support, done right"></div>
+              <div class="fg"><label>Business Email</label><input type="text" id="set-email" placeholder="kaza_a@icloud.com"></div>
+              <div class="fg"><label>Phone Number</label><input type="text" id="set-phone" placeholder="(617) 555-0000"></div>
+              <div class="fg"><label>Service Area</label><input type="text" id="set-area" placeholder="Brookline, MA"></div>
+              <button class="save-btn" onclick="saveBizInfo()">Save Business Info</button>
+              <p class="save-success" id="biz-msg"></p>
+            </div>
+            <div class="settings-card">
+              <h4>&#128202; Data</h4>
+              <p style="font-size:.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.6">All booking and message data is stored locally in your browser. Export to download a copy.</p>
+              <button class="save-btn" onclick="exportData()">Export Data (JSON)</button>
+              <br><br>
+              <button class="save-btn" style="background:rgba(239,68,68,.25);border:1px solid rgba(239,68,68,.3);color:#f87171" onclick="clearData()">Clear All Data</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── SETTINGS STORE ────────────────────────────────────────────────────────────
+const SETTINGS = JSON.parse(localStorage.getItem('an_settings') || JSON.stringify({
+  password: 'admin123',
+  venmo: '@ANServices-MA',
+  zelle: 'kaza_a@icloud.com',
+  email: 'kaza_a@icloud.com',
+  phone: '(617) 555-0000',
+  area: 'Brookline, MA',
+  businessName: 'A&N Services',
+  tagline: 'Pressure washing & handyman services trusted across Greater Boston'
+}));
+const DB = {
+  bookings: JSON.parse(localStorage.getItem('an_bookings') || '[]'),
+  messages: JSON.parse(localStorage.getItem('an_messages') || '[]'),
+  save() { localStorage.setItem('an_bookings', JSON.stringify(this.bookings)); localStorage.setItem('an_messages', JSON.stringify(this.messages)); }
+};
+function saveSettings() { localStorage.setItem('an_settings', JSON.stringify(SETTINGS)); }
+
+// Apply settings to page
+function normalizePhone(value) {
+  const digits = (value || '').replace(/\D/g, '');
+  if (digits.length === 10) return '+1' + digits;
+  if (digits.length === 11 && digits.startsWith('1')) return '+' + digits;
+  if (digits.length > 0) return '+' + digits;
+  return '';
+}
+
+function applySettings() {
+  const vEl = document.getElementById('venmo-display');
+  const zEl = document.getElementById('zelle-display');
+  const heroArea = document.getElementById('hero-area');
+  const heroDesc = document.getElementById('hero-desc-text');
+  const siteLogo = document.getElementById('site-logo');
+  const footerLogo = document.querySelector('.foot-logo');
+  const footerCopy = document.querySelector('.foot-copy');
+  const contactEmail = document.querySelectorAll('.biz-email');
+  const contactPhone = document.querySelectorAll('.biz-phone');
+  const contactArea = document.querySelectorAll('.biz-area');
+  const contactConfirmMsg = document.getElementById('contact-confirm-msg');
+
+  if (vEl) vEl.textContent = SETTINGS.venmo;
+  if (zEl) zEl.textContent = SETTINGS.zelle;
+  if (heroArea) heroArea.textContent = SETTINGS.area + ' & Surrounding Areas';
+  if (heroDesc) heroDesc.textContent = SETTINGS.tagline;
+  if (siteLogo) siteLogo.innerHTML = SETTINGS.businessName.replace('&', '<em>&</em>');
+  if (footerLogo) footerLogo.innerHTML = SETTINGS.businessName.replace('&', '<em>&</em>');
+  if (footerCopy) footerCopy.textContent = '© ' + new Date().getFullYear() + ' ' + SETTINGS.businessName + ' · ' + SETTINGS.area;
+  if (contactArea.length) contactArea.forEach(el => el.innerHTML = SETTINGS.area + ' &amp; Surrounding Areas');
+  if (contactEmail.length) contactEmail.forEach(el => {
+    el.textContent = SETTINGS.email;
+    el.href = 'mailto:' + SETTINGS.email;
+  });
+  if (contactPhone.length) contactPhone.forEach(el => {
+    el.textContent = SETTINGS.phone;
+    el.href = 'tel:' + normalizePhone(SETTINGS.phone);
+  });
+  if (contactConfirmMsg) contactConfirmMsg.textContent = 'Thanks for reaching out. We\'ll reply to ' + SETTINGS.email + ' shortly.';
+}
+applySettings();
+
+let stripeClient = null;
+async function initStripe() {
+  try {
+    const res = await fetch('/api/config');
+    const data = await res.json();
+    if (data.stripePublishableKey) {
+      stripeClient = Stripe(data.stripePublishableKey);
+    }
+  } catch (error) {
+    console.warn('Stripe config is unavailable.', error);
+  }
+}
+
+function handleStripeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  const checkout = params.get('checkout');
+  const ref = params.get('ref') || 'AN-0000';
+  if (checkout === 'success') {
+    const form = document.getElementById('book-form');
+    const confirm = document.getElementById('book-confirm');
+    if (form && confirm) {
+      form.style.display = 'none';
+      confirm.style.display = 'block';
+      document.getElementById('conf-msg').textContent = 'Payment complete! We received your booking and will email you soon.';
+      document.getElementById('conf-ref').textContent = 'REF #' + ref;
+      window.location.hash = '#booking';
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+  if (checkout === 'cancel') {
+    alert('Payment was cancelled. Please try again or choose a different payment method.');
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+}
+
+initStripe();
+handleStripeReturn();
+
+const di = document.getElementById('b-date');
+if (di) di.min = new Date().toISOString().split('T')[0];
+
+// ── PAYMENT TOGGLE ────────────────────────────────────────────────────────────
+let selectedPay = 'card';
+function selectPay(method, btn) {
+  selectedPay = method;
+  document.querySelectorAll('.pay-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['card','venmo','zelle','cash'].forEach(m => {
+    const el = document.getElementById('pay-' + m);
+    if (el) {
+      el.className = m + '-fields' + (m === method ? ' show' : '');
+    }
+  });
+}
+
+// ── CARD FORMATTING ───────────────────────────────────────────────────────────
+function formatCard(el) {
+  let v = el.value.replace(/\D/g, '').substring(0, 16);
+  el.value = v.replace(/(.{4})/g, '$1 ').trim();
+  const badge = document.getElementById('card-badge');
+  if (v.startsWith('4')) badge.textContent = 'V';
+  else if (v.startsWith('5')) badge.textContent = 'M';
+  else if (v.startsWith('3')) badge.textContent = 'Ax';
+  else badge.textContent = '\u{1F4B3}';
+}
+function formatExp(el) {
+  let v = el.value.replace(/\D/g, '').substring(0, 4);
+  if (v.length >= 3) v = v.substring(0,2) + ' / ' + v.substring(2);
+  el.value = v;
+}
+
+// ── BOOKING SUBMIT ────────────────────────────────────────────────────────────
+async function submitBooking() {
+  const fname = document.getElementById('b-fname').value.trim();
+  const lname = document.getElementById('b-lname').value.trim();
+  const phone = document.getElementById('b-phone').value.trim();
+  const email = document.getElementById('b-email').value.trim();
+  const service = document.getElementById('b-service').value;
+  const date = document.getElementById('b-date').value;
+  const time = document.getElementById('b-time').value;
+  const notes = document.getElementById('b-notes').value.trim();
+
+  if (!fname || !phone || !service) { alert('Please fill in your name, phone number, and service type.'); return; }
+
+  // Payment validation
+  const payLabels = { card: 'Credit Card', venmo: 'Venmo', zelle: 'Zelle', cash: 'Cash on Arrival' };
+  const payload = { fname, lname, phone, email, service, date, time, notes, payment: payLabels[selectedPay] };
+
+  const btn = document.getElementById('book-btn');
+  const status = document.getElementById('book-status');
+  btn.disabled = true; btn.textContent = 'Processing...';
+  status.textContent = selectedPay === 'card' ? 'Preparing secure payment...' : 'Submitting your booking request';
+  status.className = 'ai-status ai-typing';
+
+  if (selectedPay === 'card') {
+    if (!stripeClient) {
+      btn.disabled = false;
+      btn.textContent = 'Confirm & Book →';
+      status.textContent = '';
+      alert('Online payment is not available right now. Please try again later.');
+      return;
+    }
+
+    const res = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (!res.ok || !data.url) {
+      btn.disabled = false;
+      btn.textContent = 'Confirm & Book →';
+      status.textContent = '';
+      alert(data.error || 'Unable to start payment.');
+      return;
+    }
+
+    window.location = data.url;
+    return;
+  }
+
+  let serverResponse;
+  try {
+    const res = await fetch('/api/bookings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    serverResponse = await res.json();
+    if (!res.ok) throw new Error(serverResponse.error || 'Booking request failed.');
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Confirm & Book →';
+    status.className = 'ai-status';
+    status.textContent = '';
+    alert(e.message);
+    return;
+  }
+
+  const ref = serverResponse.ref || 'AN-' + Math.floor(1000 + Math.random() * 9000);
+  const booking = { ref, fname, lname, phone, email, service, date, time, notes, payment: payLabels[selectedPay], status: 'new', ts: new Date().toISOString() };
+  const pieces = [];
+  pieces.push('Thanks ' + fname + '!');
+  pieces.push('Your ' + service + ' request');
+  if (date) pieces.push('for ' + date + (time ? ' at ' + time : ''));
+  pieces.push('is in our queue.');
+  pieces.push('We will confirm your reservation soon and reach out to ' + (email || phone) + '.');
+  const confirmMsg = pieces.join(' ');
+
+  booking.confirmMsg = confirmMsg;
+  DB.bookings.unshift(booking); DB.save();
+
+  status.className = 'ai-status'; status.textContent = '';
+  document.getElementById('book-form').style.display = 'none';
+  document.getElementById('book-confirm').style.display = 'block';
+  document.getElementById('conf-msg').textContent = confirmMsg;
+  document.getElementById('conf-ref').textContent = 'REF #' + ref;
+}
+
+// ── CONTACT ───────────────────────────────────────────────────────────────────
+async function submitContact() {
+  const name = document.getElementById('c-name').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  const msg = document.getElementById('c-msg').value.trim();
+  if (!name || !msg) { alert('Please fill in your name and message.'); return; }
+  const btn = document.getElementById('c-btn');
+  const status = document.getElementById('c-status');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  status.textContent = 'Sending your message'; status.className = 'ai-status ai-typing';
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, msg })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Unable to send message.');
+  } catch (error) {
+    btn.disabled = false;
+    btn.textContent = 'Send Message →';
+    status.className = 'ai-status';
+    status.textContent = '';
+    alert(error.message);
+    return;
+  }
+
+  DB.messages.unshift({ name, email, msg, ts: new Date().toISOString() }); DB.save();
+  await new Promise(r => setTimeout(r, 800));
+  status.className = 'ai-status'; status.textContent = '';
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('c-confirm').style.display = 'block';
+}
+
+// ── ADMIN ─────────────────────────────────────────────────────────────────────
+function openAdmin() {
+  document.getElementById('admin-overlay').classList.add('open');
+  document.getElementById('admin-pw').value = '';
+  document.getElementById('admin-login').style.display = 'block';
+  document.getElementById('admin-dash').style.display = 'none';
+}
+function closeAdmin() { document.getElementById('admin-overlay').classList.remove('open'); }
+function checkPw() {
+  if (document.getElementById('admin-pw').value === SETTINGS.password) {
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-dash').style.display = 'block';
+    loadSettingsFields();
+    renderDash();
+  } else { alert('Incorrect password.'); }
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.atab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.atab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  if (name !== 'overview') renderTables();
+}
+
+const prices = { 'House & Siding Washing': 200, 'Driveway & Concrete Cleaning': 110, 'Deck & Fence Washing': 140, 'General Handyman': 140, 'Window & Gutter Cleaning': 120, 'Minor Repairs & Installs': 140, 'Multiple Services / Custom Quote': 275 };
+const sc = ['new', 'confirmed', 'done'];
+const payColor = { 'Credit Card': 'pay-card', 'Venmo': 'pay-venmo', 'Zelle': 'pay-zelle', 'Cash on Arrival': 'pay-cash' };
+
+function bookRow(b, i) {
+  return '<tr><td style="color:var(--blue3);font-weight:600">' + b.ref + '</td><td>' + b.fname + ' ' + (b.lname||'') + '</td><td>' + b.service + '</td><td>' + (b.date||'&mdash;') + '</td><td><a href="tel:' + b.phone + '" style="color:var(--blue3);text-decoration:none">' + b.phone + '</a></td><td><span class="sbadge ' + (payColor[b.payment]||'pay-cash') + '">' + (b.payment||'Cash') + '</span></td><td><span class="sbadge s-' + b.status + '">' + b.status + '</span></td><td><button class="upd-btn" onclick="cycleStatus(' + i + ')">Update &rarr;</button></td></tr>';
+}
+
+function renderDash() {
+  const B = DB.bookings, M = DB.messages;
+  document.getElementById('s-total').textContent = B.length;
+  document.getElementById('s-new').textContent = B.filter(b => b.status === 'new').length;
+  document.getElementById('s-msgs').textContent = M.length;
+  document.getElementById('s-rev').textContent = '$' + B.reduce((s, b) => s + (prices[b.service] || 160), 0).toLocaleString();
+  const recentBookings = B.slice(0, 5);
+  document.getElementById('book-tbl-overview').innerHTML = recentBookings.length
+    ? '<table class="data-tbl"><thead><tr><th>Ref</th><th>Customer</th><th>Service</th><th>Date</th><th>Phone</th><th>Payment</th><th>Status</th><th></th></tr></thead><tbody>' + recentBookings.map((b,i) => bookRow(b,i)).join('') + '</tbody></table>'
+    : '<div class="t-empty">No bookings yet &mdash; they\'ll appear here once submitted.</div>';
+  renderTables();
+}
+
+function renderTables() {
+  const B = DB.bookings, M = DB.messages;
+  const bEl = document.getElementById('book-tbl-full');
+  if (bEl) bEl.innerHTML = B.length
+    ? '<table class="data-tbl"><thead><tr><th>Ref</th><th>Customer</th><th>Service</th><th>Date</th><th>Phone</th><th>Payment</th><th>Status</th><th></th></tr></thead><tbody>' + B.map((b,i) => bookRow(b,i)).join('') + '</tbody></table>'
+    : '<div class="t-empty">No bookings yet.</div>';
+  const mEl = document.getElementById('msg-tbl');
+  if (mEl) mEl.innerHTML = M.length
+    ? '<table class="data-tbl"><thead><tr><th>Name</th><th>Email</th><th>Message</th><th>Date</th></tr></thead><tbody>' + M.map(m => '<tr><td style="font-weight:500;color:var(--white)">' + m.name + '</td><td><a href="mailto:' + m.email + '" style="color:var(--blue3);text-decoration:none">' + (m.email||'&mdash;') + '</a></td><td style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + m.msg + '</td><td>' + new Date(m.ts).toLocaleDateString() + '</td></tr>').join('') + '</tbody></table>'
+    : '<div class="t-empty">No messages yet.</div>';
+}
+
+function cycleStatus(i) {
+  DB.bookings[i].status = sc[(sc.indexOf(DB.bookings[i].status) + 1) % sc.length];
+  DB.save(); renderDash();
+}
+
+// ── SETTINGS ACTIONS ──────────────────────────────────────────────────────────
+function loadSettingsFields() {
+  document.getElementById('set-name').value = SETTINGS.businessName;
+  document.getElementById('set-tagline').value = SETTINGS.tagline;
+  document.getElementById('set-venmo').value = SETTINGS.venmo;
+  document.getElementById('set-zelle').value = SETTINGS.zelle;
+  document.getElementById('set-email').value = SETTINGS.email;
+  document.getElementById('set-phone').value = SETTINGS.phone;
+  document.getElementById('set-area').value = SETTINGS.area;
+}
+
+function changePassword() {
+  const cur = document.getElementById('pw-current').value;
+  const nw = document.getElementById('pw-new').value;
+  const conf = document.getElementById('pw-confirm').value;
+  const msg = document.getElementById('pw-msg');
+  if (cur !== SETTINGS.password) { msg.style.color='#f87171'; msg.textContent = 'Current password is incorrect.'; return; }
+  if (nw.length < 6) { msg.style.color='#f87171'; msg.textContent = 'New password must be at least 6 characters.'; return; }
+  if (nw !== conf) { msg.style.color='#f87171'; msg.textContent = 'Passwords do not match.'; return; }
+  SETTINGS.password = nw;
+  saveSettings();
+  msg.style.color = 'var(--green)';
+  msg.textContent = 'Password updated successfully!';
+  document.getElementById('pw-current').value = '';
+  document.getElementById('pw-new').value = '';
+  document.getElementById('pw-confirm').value = '';
+  setTimeout(() => msg.textContent = '', 3000);
+}
+
+function savePaymentInfo() {
+  SETTINGS.venmo = document.getElementById('set-venmo').value.trim() || SETTINGS.venmo;
+  SETTINGS.zelle = document.getElementById('set-zelle').value.trim() || SETTINGS.zelle;
+  saveSettings(); applySettings();
+  const msg = document.getElementById('pay-msg');
+  msg.style.color = 'var(--green)'; msg.textContent = 'Payment info saved!';
+  setTimeout(() => msg.textContent = '', 3000);
+}
+
+function saveBizInfo() {
+  SETTINGS.businessName = document.getElementById('set-name').value.trim() || SETTINGS.businessName;
+  SETTINGS.tagline = document.getElementById('set-tagline').value.trim() || SETTINGS.tagline;
+  SETTINGS.email = document.getElementById('set-email').value.trim() || SETTINGS.email;
+  SETTINGS.phone = document.getElementById('set-phone').value.trim() || SETTINGS.phone;
+  SETTINGS.area = document.getElementById('set-area').value.trim() || SETTINGS.area;
+  saveSettings();
+  applySettings();
+  const msg = document.getElementById('biz-msg');
+  msg.style.color = 'var(--green)'; msg.textContent = 'Business info saved!';
+  setTimeout(() => msg.textContent = '', 3000);
+}
+
+function exportData() {
+  const data = { bookings: DB.bookings, messages: DB.messages, exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'an-services-data-' + new Date().toISOString().split('T')[0] + '.json';
+  a.click();
+}
+
+function clearData() {
+  if (confirm('Are you sure? This will delete ALL bookings and messages permanently.')) {
+    DB.bookings = []; DB.messages = []; DB.save(); renderDash();
+    alert('All data cleared.');
+  }
+}
+
+document.getElementById('admin-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeAdmin();
+});
+</script>
+</body>
+</html>
