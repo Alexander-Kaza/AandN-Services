@@ -347,7 +347,7 @@ footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid 
     <p class="s-sub">Booking with A&amp;N is fast, transparent, and completely hassle-free.</p>
     <div class="process-grid">
       <div class="proc-step"><div class="proc-num">1</div><h4>Book Online</h4><p>Fill out our quick form with your service, date, and details. No phone tag.</p></div>
-      <div class="proc-step"><div class="proc-num">2</div><h4>Pay Securely</h4><p>Choose your payment method &mdash; card, Venmo, Zelle, or cash on arrival.</p></div>
+      <div class="proc-step"><div class="proc-num">2</div><h4>Pay Securely</h4><p>Payment is cash on arrival — simple and easy.</p></div>
       <div class="proc-step"><div class="proc-num">3</div><h4>We Show Up</h4><p>Our team arrives on schedule, fully equipped and ready to work.</p></div>
       <div class="proc-step"><div class="proc-num">4</div><h4>You're Satisfied</h4><p>We don't leave until you're happy. Quality guaranteed every time.</p></div>
     </div>
@@ -383,7 +383,7 @@ footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid 
         <p>Submit your request, choose your payment method, and get an AI-generated confirmation instantly. We follow up within a few hours.</p>
         <div class="steps-list">
           <div class="step-item"><div class="step-n">1</div><div><h5>Choose your service &amp; date</h5><p>Select what you need, when you need it.</p></div></div>
-          <div class="step-item"><div class="step-n">2</div><div><h5>Pay your way</h5><p>Credit card, Venmo, Zelle, or cash on arrival &mdash; your choice.</p></div></div>
+          <div class="step-item"><div class="step-n">2</div><div><h5>Payment</h5><p>Cash on arrival — no online payments required.</p></div></div>
           <div class="step-item"><div class="step-n">3</div><div><h5>Get instant AI confirmation</h5><p>Claude AI writes a personalized confirmation with your reference number.</p></div></div>
           <div class="step-item"><div class="step-n">4</div><div><h5>We show up &amp; get it done</h5><p>Tracked in our dashboard from booking to completion.</p></div></div>
         </div>
@@ -429,79 +429,15 @@ footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid 
             <div class="payment-section">
               <div class="payment-label-row">
                 <span>Payment Method</span>
-                <span style="font-size:.7rem;color:rgba(107,138,176,.5)">Secure &amp; Trusted</span>
+                <span style="font-size:.7rem;color:rgba(107,138,176,.5)">Cash on arrival</span>
               </div>
-              <div class="payment-methods">
-                <button type="button" class="pay-btn active" onclick="selectPay('card',this)">
-                  <span class="pay-icon">&#128179;</span>
-                  <span class="pay-name">Credit Card</span>
-                </button>
-                <button type="button" class="pay-btn" onclick="selectPay('venmo',this)">
-                  <span class="pay-icon">&#128184;</span>
-                  <span class="pay-name">Venmo</span>
-                </button>
-                <button type="button" class="pay-btn" onclick="selectPay('zelle',this)">
-                  <span class="pay-icon">&#9889;</span>
-                  <span class="pay-name">Zelle</span>
-                </button>
-                <button type="button" class="pay-btn" onclick="selectPay('cash',this)">
-                  <span class="pay-icon">&#128181;</span>
-                  <span class="pay-name">Cash</span>
-                </button>
-              </div>
-
-              <!-- CARD FIELDS -->
-              <div class="card-fields show" id="pay-card">
-                <div class="fg"><label>Cardholder Name</label><input type="text" id="cc-name" placeholder="John Smith"></div>
-                <div class="fg">
-                  <label>Card Number</label>
-                  <div class="card-input-wrap">
-                    <input type="text" id="cc-num" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)">
-                    <span class="card-badge" id="card-badge">&#128179;</span>
-                  </div>
-                </div>
-                <div class="card-row">
-                  <div class="fg"><label>MM / YY</label><input type="text" id="cc-exp" placeholder="MM / YY" maxlength="7" oninput="formatExp(this)"></div>
-                  <div class="fg"><label>CVV</label><input type="password" id="cc-cvv" placeholder="***" maxlength="4"></div>
-                  <div class="fg"><label>ZIP Code</label><input type="text" id="cc-zip" placeholder="02446" maxlength="5"></div>
-                </div>
-                <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;display:flex;align-items:center;gap:.4rem">&#128274; Payments are processed securely. Card details are never stored.</p>
-              </div>
-
-              <!-- VENMO FIELDS -->
-              <div class="venmo-fields" id="pay-venmo">
-                <div class="venmo-info-box">
-                  <span class="venmo-logo">&#128184;</span>
-                  <div>
-                    <h4>Send via Venmo</h4>
-                    <p>After booking, send your deposit to:</p>
-                    <p class="venmo-handle" id="venmo-display">@ANServices-MA</p>
-                  </div>
-                </div>
-                <div class="fg" style="margin-top:.875rem"><label>Your Venmo Username</label><input type="text" id="venmo-user" placeholder="@yourname"></div>
-                <p class="deposit-note">A 25% deposit is collected to confirm your booking. Remainder due on day of service.</p>
-              </div>
-
-              <!-- ZELLE FIELDS -->
-              <div class="zelle-fields" id="pay-zelle">
-                <div class="zelle-info-box">
-                  <span class="zelle-logo">&#9889;</span>
-                  <div>
-                    <h4>Send via Zelle</h4>
-                    <p>After booking, send your deposit to:</p>
-                    <p style="font-size:.95rem;font-weight:600;color:#c084fc;letter-spacing:.02em" id="zelle-display">kaza_a@icloud.com</p>
-                  </div>
-                </div>
-                <p class="deposit-note">A 25% deposit is collected to confirm your booking. Remainder due on day of service.</p>
-              </div>
-
-              <!-- CASH FIELDS -->
-              <div class="cash-fields" id="pay-cash">
-                <div class="cash-info-box">
+              <div style="margin-top:1rem">
+                <div class="cash-info-box" style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.06));border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:1rem">
                   <span class="cash-logo">&#128181;</span>
                   <div>
                     <h4>Pay Cash on Arrival</h4>
                     <p>No deposit needed. Full payment collected when the job is complete. Please have exact amount ready.</p>
+                    <p style="margin-top:.5rem;font-size:.9rem;color:var(--muted)">We also accept Venmo in person: <span id="venmo-display">@ANServices-MA</span></p>
                   </div>
                 </div>
               </div>
@@ -540,7 +476,7 @@ footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid 
           <div class="c-item"><div class="c-icon">&#9993;</div><div><h5>Email</h5><p><a class="biz-email" href="mailto:kaza_a@icloud.com">kaza_a@icloud.com</a></p></div></div>
           <div class="c-item"><div class="c-icon">&#128205;</div><div><h5>Service Area</h5><p class="biz-area">Brookline &middot; Newton &middot; Chestnut Hill &middot; Jamaica Plain &amp; Watertown &amp; surrounding towns</p></div></div>
           <div class="c-item"><div class="c-icon">&#128336;</div><div><h5>Hours</h5><p>Mon&ndash;Sat: 7am&ndash;6pm &nbsp;&middot;&nbsp; Sun: By Appointment</p></div></div>
-          <div class="c-item"><div class="c-icon">&#128179;</div><div><h5>We Accept</h5><p>Credit Card &nbsp;&middot;&nbsp; Venmo &nbsp;&middot;&nbsp; Zelle &nbsp;&middot;&nbsp; Cash</p></div></div>
+          <div class="c-item"><div class="c-icon">&#128179;</div><div><h5>We Accept</h5><p>Cash on arrival &middot; Venmo (in person)</p></div></div>
         </div>
       </div>
       <div class="form-panel">
@@ -733,60 +669,14 @@ function applySettings() {
 }
 applySettings();
 
-let stripeClient = null;
-async function initStripe() {
-  try {
-    const res = await fetch('/api/config');
-    const data = await res.json();
-    if (data.stripePublishableKey) {
-      stripeClient = Stripe(data.stripePublishableKey);
-    }
-  } catch (error) {
-    console.warn('Stripe config is unavailable.', error);
-  }
-}
-
-function handleStripeReturn() {
-  const params = new URLSearchParams(window.location.search);
-  const checkout = params.get('checkout');
-  const ref = params.get('ref') || 'AN-0000';
-  if (checkout === 'success') {
-    const form = document.getElementById('book-form');
-    const confirm = document.getElementById('book-confirm');
-    if (form && confirm) {
-      form.style.display = 'none';
-      confirm.style.display = 'block';
-      document.getElementById('conf-msg').textContent = 'Payment complete! We received your booking and will email you soon.';
-      document.getElementById('conf-ref').textContent = 'REF #' + ref;
-      window.location.hash = '#booking';
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }
-  if (checkout === 'cancel') {
-    alert('Payment was cancelled. Please try again or choose a different payment method.');
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
-}
-
-initStripe();
-handleStripeReturn();
+// Stripe integration removed — cash-only flow.
 
 const di = document.getElementById('b-date');
 if (di) di.min = new Date().toISOString().split('T')[0];
 
 // ── PAYMENT TOGGLE ────────────────────────────────────────────────────────────
-let selectedPay = 'card';
-function selectPay(method, btn) {
-  selectedPay = method;
-  document.querySelectorAll('.pay-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  ['card','venmo','zelle','cash'].forEach(m => {
-    const el = document.getElementById('pay-' + m);
-    if (el) {
-      el.className = m + '-fields' + (m === method ? ' show' : '');
-    }
-  });
-}
+let selectedPay = 'cash';
+function selectPay(method, btn) { selectedPay = 'cash'; }
 
 // ── CARD FORMATTING ───────────────────────────────────────────────────────────
 function formatCard(el) {
@@ -819,73 +709,30 @@ async function submitBooking() {
 
   // Payment validation
   const payLabels = { card: 'Credit Card', venmo: 'Venmo', zelle: 'Zelle', cash: 'Cash on Arrival' };
-  const payload = { fname, lname, phone, email, service, date, time, notes, payment: payLabels[selectedPay] };
+  const payment = payLabels[selectedPay] || 'Cash on Arrival';
 
   const btn = document.getElementById('book-btn');
   const status = document.getElementById('book-status');
   btn.disabled = true; btn.textContent = 'Processing...';
-  status.textContent = selectedPay === 'card' ? 'Preparing secure payment...' : 'Submitting your booking request';
+  status.textContent = 'Saving your booking locally';
   status.className = 'ai-status ai-typing';
 
-  if (selectedPay === 'card') {
-    if (!stripeClient) {
-      btn.disabled = false;
-      btn.textContent = 'Confirm & Book →';
-      status.textContent = '';
-      alert('Online payment is not available right now. Please try again later.');
-      return;
-    }
-
-    const res = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-    if (!res.ok || !data.url) {
-      btn.disabled = false;
-      btn.textContent = 'Confirm & Book →';
-      status.textContent = '';
-      alert(data.error || 'Unable to start payment.');
-      return;
-    }
-
-    window.location = data.url;
-    return;
-  }
-
-  let serverResponse;
-  try {
-    const res = await fetch('/api/bookings', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    serverResponse = await res.json();
-    if (!res.ok) throw new Error(serverResponse.error || 'Booking request failed.');
-  } catch (e) {
-    btn.disabled = false;
-    btn.textContent = 'Confirm & Book →';
-    status.className = 'ai-status';
-    status.textContent = '';
-    alert(e.message);
-    return;
-  }
-
-  const ref = serverResponse.ref || 'AN-' + Math.floor(1000 + Math.random() * 9000);
-  const booking = { ref, fname, lname, phone, email, service, date, time, notes, payment: payLabels[selectedPay], status: 'new', ts: new Date().toISOString() };
+  const ref = 'AN-' + Math.floor(1000 + Math.random() * 9000);
+  const booking = { ref, fname, lname, phone, email, service, date, time, notes, payment, status: 'new', ts: new Date().toISOString() };
   const pieces = [];
   pieces.push('Thanks ' + fname + '!');
   pieces.push('Your ' + service + ' request');
   if (date) pieces.push('for ' + date + (time ? ' at ' + time : ''));
   pieces.push('is in our queue.');
   pieces.push('We will confirm your reservation soon and reach out to ' + (email || phone) + '.');
+  if (SETTINGS.venmo) pieces.push('We also accept Venmo in person: ' + SETTINGS.venmo + '.');
   const confirmMsg = pieces.join(' ');
 
   booking.confirmMsg = confirmMsg;
   DB.bookings.unshift(booking); DB.save();
 
   status.className = 'ai-status'; status.textContent = '';
+  btn.disabled = false; btn.textContent = 'Confirm & Book →';
   document.getElementById('book-form').style.display = 'none';
   document.getElementById('book-confirm').style.display = 'block';
   document.getElementById('conf-msg').textContent = confirmMsg;
@@ -903,26 +750,10 @@ async function submitContact() {
   btn.disabled = true; btn.textContent = 'Sending...';
   status.textContent = 'Sending your message'; status.className = 'ai-status ai-typing';
 
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, msg })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Unable to send message.');
-  } catch (error) {
-    btn.disabled = false;
-    btn.textContent = 'Send Message →';
-    status.className = 'ai-status';
-    status.textContent = '';
-    alert(error.message);
-    return;
-  }
-
   DB.messages.unshift({ name, email, msg, ts: new Date().toISOString() }); DB.save();
   await new Promise(r => setTimeout(r, 800));
   status.className = 'ai-status'; status.textContent = '';
+  btn.disabled = false; btn.textContent = 'Send Message →';
   document.getElementById('contact-form').style.display = 'none';
   document.getElementById('c-confirm').style.display = 'block';
 }

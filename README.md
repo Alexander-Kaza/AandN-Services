@@ -1,40 +1,21 @@
 # AandN-Services
 
-A simple landing page for A&N Services with a Node.js backend, Stripe online payments, and SMTP email notifications.
+A simple static landing page for A&N Services with frontend booking and contact forms.
 
 ## Setup
 
-1. Install dependencies:
+1. Open `an-services_1.html` directly in your browser.
+
+2. If you want to run it from a local server, you can use any static server. For example:
    ```bash
-   npm install
+   python3 -m http.server 8000
    ```
-
-2. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Update `.env` with your Stripe keys and SMTP credentials.
-
-4. Start the server:
-   ```bash
-   npm start
-   ```
-
-5. Open the site in your browser:
-   ```
-   http://localhost:3000
-   ```
-
-## Backend endpoints
-
-- `POST /api/contact` - sends contact form emails and stores messages.
-- `POST /api/bookings` - creates offline booking requests and sends notification emails.
-- `POST /api/create-checkout-session` - starts a Stripe Checkout payment session.
-- `POST /webhook` - receives Stripe payment events and confirms paid bookings.
+   then visit `http://localhost:8000/an-services_1.html`
 
 ## Notes
 
-- Payments require `STRIPE_SECRET_KEY`, `STRIPE_PUBLISHABLE_KEY`, and `STRIPE_WEBHOOK_SECRET`.
-- Emails require `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USER`, `EMAIL_PASS`, and `BUSINESS_EMAIL`.
-- Booking and contact data are stored in the `data/` directory.
+- Bookings and messages are saved to browser `localStorage` only.
+- No backend server, no emails, and no Stripe integration are required.
+- Reloading or clearing browser data will remove saved bookings/messages.
+
+- If you only want the static frontend, you can ignore `server.js`, `package.json`, and backend files.
